@@ -42,18 +42,7 @@ server.tomcat.accesslog.request-attributes-enabled=true
 server.tomcat.accesslog.rotate=true
 server.tomcat.accesslog.suffix=.log
 
-
-#Retail config
-transaction.interval=2
-
-extra.metric.points=5
-gzExpertMailId=care@gritzo.com
-crop.image.enlarge.percentage=20
+firebase.android.auth.key=AIzaSyCFbLFedHCztAcTXlg9B20PixZe8kw7va0
 
 
-app.android.google.client_secret = client_secret_of_android
-app.android.google.client_id = client_id_of_android
-
-app.ios.google.client_secret = client_secret_of_ios
-app.ios.google.client_id = client_id_of_ios
 
