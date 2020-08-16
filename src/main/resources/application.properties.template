@@ -1,0 +1,59 @@
+# App config
+
+#Environment
+project.env=prod
+spring.profiles.active=dev
+
+#Server
+server.port=8102
+server.servlet.context-path=/crm
+
+#Gateway
+api.gateway.active=false
+
+# Mongo DB
+mongo.connectionsPerHost=50
+mongo.connectTimeout=1000
+mongo.maxWaitTime=1500
+mongo.socketKeepAlive=true
+mongo.socketTimeout=1500
+mongo.serverSelectionTimeout=10000
+
+
+#Facebookjava.io.tmpdir = src/uploads
+
+facebook.access.token = fbaccesstoken
+
+#fileuploadpath
+spring.servlet.multipart.max-file-size=5MB
+spring.servlet.multipart.max-request-size=5MB
+server.tomcat.max-http-post-size=6291456
+
+
+#Tomcat AccessLog
+server.tomcat.accesslog.enabled=true
+server.tomcat.accesslog.buffered=true
+server.tomcat.accesslog.directory=/usr/local/projects/crmEdge/logs/
+server.tomcat.accesslog.file-date-format=.yyyy-MM-dd
+server.tomcat.accesslog.pattern={ \"time\":\"%t\", \"ip\":\"%a\", \"host\":\"%{Host}i\", \"rtname\":\"%I\", \"url\":\"%U\", \"query\":\"%q\", \"req\":\"%m\", \"status\":\"%s\", \"ttpreq\":\"%D\", \"userAgent\":\"%{User-agent}i\", \"ref\":\"%{Referer}i\" }
+server.tomcat.accesslog.prefix=crmEdge_access
+server.tomcat.accesslog.rename-on-rotate=true
+server.tomcat.accesslog.request-attributes-enabled=true
+server.tomcat.accesslog.rotate=true
+server.tomcat.accesslog.suffix=.log
+
+
+#Retail config
+transaction.interval=2
+
+extra.metric.points=5
+gzExpertMailId=care@gritzo.com
+crop.image.enlarge.percentage=20
+
+
+app.android.google.client_secret = client_secret_of_android
+app.android.google.client_id = client_id_of_android
+
+app.ios.google.client_secret = client_secret_of_ios
+app.ios.google.client_id = client_id_of_ios
+
