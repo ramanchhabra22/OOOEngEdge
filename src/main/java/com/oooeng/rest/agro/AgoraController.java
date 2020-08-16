@@ -28,5 +28,10 @@ public class AgoraController {
         return new Response(ResponseStatus.INVALID_REQUEST, "PHONE NUMBER IS MANDATORY");
     }
 
+    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    public Response testMethod(){
+        return new Response(ResponseStatus.OK,"Hey");
+    }
+
 
 }
