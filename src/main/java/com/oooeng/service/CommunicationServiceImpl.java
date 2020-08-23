@@ -53,10 +53,7 @@ public class CommunicationServiceImpl implements CommunicationService {
 
         Calendar calendar = Calendar.getInstance();
         JSONObject pushNotificationBody = new JSONObject();
-        JSONObject notificationObj = new JSONObject();
-        notificationObj.put("title", title);
-        notificationObj.put("body", message);
-        notificationObj.put("sound", "default");
+
 
         JSONObject dataObj = new JSONObject();
         dataObj.put("id", calendar.getTimeInMillis());
@@ -64,9 +61,10 @@ public class CommunicationServiceImpl implements CommunicationService {
         dataObj.put("click_action", url);
         dataObj.put("channel_name", channelName);
         dataObj.put("access_token", accessToken);
+        dataObj.put("title", title);
+        dataObj.put("body", message);
         dataObj.put("notification_type", notificationType);
 
-        pushNotificationBody.put("notification", notificationObj);
         pushNotificationBody.put("data", dataObj);
         pushNotificationBody.put("time_to_live", 2000);
         pushNotificationBody.put("registration_ids", fcmIds);
@@ -75,6 +73,12 @@ public class CommunicationServiceImpl implements CommunicationService {
             headers.add("Content-Type", "application/json");
             headers.add("Authorization", "key=" + firebaseAuthKey);
             restClient.post(PushNotificationConstants.URL, pushNotificationBody.toString(), headers);
+        }else{
+            JSONObject notificationObj = new JSONObject();
+            notificationObj.put("title", title);
+            notificationObj.put("body", message);
+            notificationObj.put("sound", "default");
+            pushNotificationBody.put("notification", notificationObj);
         }
 
 
